@@ -1,4 +1,4 @@
-const SongForm = () => {
+const SongForm = ({ handleSearch }) => {
   return <div>SongForm</div>;
 };
 
