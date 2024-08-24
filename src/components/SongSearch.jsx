@@ -35,7 +35,7 @@ const SongSearcher = () => {
           .then((res) => res.data)
           .catch((err) => err.response),
         axios
-          .get(songtUrl, { signal: controller.signal })
+          .get(songtUrl)
           .then((res) => res.data)
           .catch((err) => err.response),
       ]);
@@ -54,10 +54,11 @@ const SongSearcher = () => {
 
   return (
     <div>
-      SongSearcher
       {isLoading && <Loader />}
       <SongForm handleSearch={handleSearch} />
-      <SongDetails search={search} lyrics={lyrics} artist={artist} />
+      {search && !isLoading && (
+        <SongDetails search={search} lyrics={lyrics} artist={artist} />
+      )}
     </div>
   );
 };
