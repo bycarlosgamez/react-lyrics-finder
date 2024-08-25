@@ -5,7 +5,6 @@ import Message from './Message';
 const SongDetails = ({ search, artist, lyrics }) => {
   // if (!lyrics || !artist) return;
   // console.log(artist.artists[0].strArtist, lyrics.lyrics);
-  console.log(artist);
 
   return (
     <>
@@ -21,8 +20,8 @@ const SongDetails = ({ search, artist, lyrics }) => {
         </div>
       ) : (
         <div>
-          <Lyrics lyrics={lyrics} />
-          <Artist artist={artist} />
+          <Lyrics lyrics={lyrics} title={search.song} />
+          <Artist artist={artist.artists[0]} />
         </div>
       )}
     </>

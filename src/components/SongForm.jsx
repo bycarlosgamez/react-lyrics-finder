@@ -77,7 +77,7 @@ const SongForm = ({ handleSearch }) => {
           <input
             type='submit'
             value='Search'
-            className='appearance-none block w-full bg-cyan-700 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-cyan-600 focus:outline-none focus:bg-white focus:border-gray-500'
+            className='appearance-none block w-full bg-cyan-700 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-cyan-600 focus:outline-none focus:bg-cyan-50 focus:border-cyan-500 focus:text-cyan-500'
           />
         </div>
       </div>
