@@ -54,11 +54,20 @@ const SongSearcher = () => {
 
   return (
     <div>
-      {isLoading && <Loader />}
-      <SongForm handleSearch={handleSearch} />
-      {search && !isLoading && (
-        <SongDetails search={search} lyrics={lyrics} artist={artist} />
-      )}
+      <div className='header my-3 h-12 px-10 flex items-center justify-between'>
+        <h1 className='font-medium text-2xl'>Song finder</h1>
+      </div>
+      <div className='flex flex-col mx-3 mt-6 lg:flex-row'>
+        <div className='w-full lg:w-1/3 m-1'>
+          {isLoading && <Loader />}
+          <SongForm handleSearch={handleSearch} />
+        </div>
+        <div className='w-full lg:w-2/3 m-1 bg-white shadow-lg text-lg rounded-sm border border-gray-200'>
+          {search && !isLoading && (
+            <SongDetails search={search} lyrics={lyrics} artist={artist} />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

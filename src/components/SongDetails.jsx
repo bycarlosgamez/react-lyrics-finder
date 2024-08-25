@@ -14,14 +14,16 @@ const SongDetails = ({ search, artist, lyrics }) => {
           bgColor={'#ef4444'}
         />
       ) : lyrics.lyrics === undefined || !lyrics ? (
-        <div>
+        <>
+          <div className='overflow-x-auto rounded-lg p-3'>
+            <Artist artist={artist} />
+          </div>
           <Message msg={`Error: lyrics not found`} bgColor={'#ef4444'} />
-          <Artist artist={artist} />
-        </div>
+        </>
       ) : (
-        <div>
-          <Lyrics lyrics={lyrics} title={search.song} />
+        <div className='overflow-x-auto rounded-lg p-3 divide-y'>
           <Artist artist={artist.artists[0]} />
+          <Lyrics lyrics={lyrics} title={search.song} />
         </div>
       )}
     </>
